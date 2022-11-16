@@ -1,0 +1,19 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+     background: url("./assets/images/bg2.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
+ 
+ #date {
+    text-shadow: "1px 1px 1px #771616";
+ }
+
+ #weather-list {
+    list-style: none;
+ }
