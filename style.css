@@ -3,13 +3,12 @@ a {
     color: black;
 }
 body {
-     background: url("./assets/images/bg2.png") no-repeat center center fixed;
+     background: url("./assets/images/lightmode.jpeg") no-repeat center center fixed;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;
  }
- 
  #date {
     text-shadow: "1px 1px 1px #771616";
  }
@@ -17,3 +16,11 @@ body {
  #weather-list {
     list-style: none;
  }
+.dark-mode {
+    background: url("./assets/images/darkmode.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}

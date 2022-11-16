@@ -1,4 +1,6 @@
-<!-- <footer class="section">
-    <div class="center grey-text">Copyright 2022 addileeg</div>
+<footer class="section p-4">
+    <div class="text-center text-secondary">Copyright 2022 Addi Guskey</div>
 </footer>
-</body> -->
+</body>
+
+</html>
