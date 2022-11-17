@@ -42,7 +42,7 @@ http://localhost/phpWeather/index.php
 
 # Usage
 
-![screenshot](./assets/images/preview.png)
+![screenshot](./assets/images/preveiw.gif)
 
 # Badges
 
