@@ -1,8 +1,6 @@
 <?php
-include('templates/header.php');
-error_reporting(0);
-error_reporting(E_ALL);
 
+include('templates/header.php');
 include('./config/db_connection.php');
 
 date_default_timezone_set('MST');
@@ -46,18 +44,17 @@ if (array_key_exists('submit', $_POST)) {
             echo 'query error: ' . mysqli_error($conn);
         }
     }
+
     ///////////////////////////////////////
-    ////////HOURLY API CALL !!/////////////
+    ////////3-HOURLY API CALL !!///////////
     ///////////////////////////////////////
 
-    // extracting lat/lon to find the hourly forecast
+    // extracting lat/lon from current weather API to plug into the 3hourly forecast
     $lat = $weatherArray['coord']['lat'];
     $lon = $weatherArray['coord']['lon'];
-    // print($lat);
-    // print($lon);
 
+    //fetching
     $hourlyApiCall = file_get_contents("https://api.openweathermap.org/data/2.5/forecast?lat=" . $lat . "&lon=" . $lon . "&appid=464770d8a5748695dded85cb88f43e87");
-    // print_r($hourlyApiCall);
     $hourlyArray = json_decode($hourlyApiCall, true);
     // echo json_encode($hourlyArray);
 
@@ -94,7 +91,7 @@ if (array_key_exists('submit', $_POST)) {
 <html lang="en">
 
 <body>
-    <!-- SEARCH/Clear History SECTION -->
+    <!-- SEARCH SECTION -->
     <div>
         <div class="d-flex flex-column align-items-center text-center ">
             <div class="d-flex row align-items-center justify-content-center ">
@@ -130,21 +127,19 @@ if (array_key_exists('submit', $_POST)) {
                                 <input type="submit" name="save" value="Save" class="btn btn-light"></input>
                             </form>
                         </div>
-                        <!-- MAKE FORM TAGS FOR  -->
-                        <!-- <form id="temperature" method="POST"> -->
-
 
                     <?php } ?>
 
                 </div>
 
             </div>
+
             <!-- THREE HOURLY FORECAST -->
             <?php if ($weather) { ?>
                 <div>
-
                     <h3 class="text-center text-white mt-3 p-2"><b> 3 Hour Forecast</b></h3>
                     <div class="card-group border-0 p-2">
+
                         <!-- CARD 1 -->
                         <div class="card bg-light " id="card1">
                             <div class="card-body">
@@ -153,6 +148,7 @@ if (array_key_exists('submit', $_POST)) {
                                 <p class="card-text align-items-center"><?php echo $hour3desc ?></p>
                             </div>
                         </div>
+
                         <!-- CARD 2 -->
                         <div class="card bg-light" id="card2">
                             <div class="card-body">
@@ -161,6 +157,7 @@ if (array_key_exists('submit', $_POST)) {
                                 <p class="card-text align-middle"><?php echo $hour6desc ?></p>
                             </div>
                         </div>
+
                         <!-- CARD 3 -->
                         <div class="card bg-light" id="card3">
                             <div class="card-body">
@@ -169,6 +166,7 @@ if (array_key_exists('submit', $_POST)) {
                                 <p class="card-text"><?php echo $hour9desc ?></p>
                             </div>
                         </div>
+
                         <!-- CARD 4 -->
                         <div class="card bg-light" id="card4">
                             <div class="card-body">
@@ -177,6 +175,7 @@ if (array_key_exists('submit', $_POST)) {
                                 <p class="card-text"><?php echo $hour12desc ?></p>
                             </div>
                         </div>
+
                         <!-- CARD 5 -->
                         <div class="card bg-light" id="card5">
                             <div class="card-body">

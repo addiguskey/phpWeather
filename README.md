@@ -5,10 +5,6 @@
 Global Weather Seach Engine built with PHP, mySQL, HTML, CSS and bootstrap<br/>
 Displays weather forecasted for every three hours.
 
-# live link
-
-https://addig-portfolio.herokuapp.com/
-
 # Table of Contents
 
 - [Built With](#built-with)

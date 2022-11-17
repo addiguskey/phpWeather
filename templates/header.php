@@ -12,20 +12,20 @@
 
 </head>
 
-<div class="d-flex flex-column align-items-end mt-4 me-5
-">
+<!-- light/dark mode toggle -->
+<div class="d-flex flex-column align-items-end mt-4 me-5">
     <div class="row">
         <button onclick="toggle()" class="btn btn-outline-secondary text-dark">toggle mode</button>
     </div>
 </div>
-
-
 <script>
     function toggle() {
         var element = document.body;
         element.classList.toggle("dark-mode");
     }
 </script>
+
+<!-- nav bar -->
 <nav class="container py-4 text-center">
     <div class="pb-3 mb-4 border-bottom">
         <a href="index.php" class="d-flex align-items-center text-dark text-decoration-none">
